@@ -13,7 +13,7 @@
               <v-spacer></v-spacer>
 
                 <!--<span>Olá, {{nome}}</span>-->
-                <span>Olá, Usuário</span>
+                <span>Olá, {{nome}}</span>
                 <v-btn @click="logout" text>
                   <v-icon>power_settings_new</v-icon>
               </v-btn>
@@ -51,16 +51,19 @@ export default {
   data: () => ({
       nome: ''
   }),
-
     created() {
 
+    },
+    mounted(){
+        if (localStorage.nome) this.nome = localStorage.nome;
     },
 
     methods: {
         logout() {
-            this.$router.push('/logout')
+            this.$store.dispatch('auth/logout', false).then(() => {
+                this.$router.push('/login')
+            })
         }
-
     }
 };
 </script>

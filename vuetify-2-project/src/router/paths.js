@@ -21,13 +21,4 @@ export default [
         component: LoginPage
     },
 
-    {
-        path: '/logout',
-        meta: { breadcrumb: true },
-        name: 'Logout',
-        beforeEnter (to, from, next) {
-            store.dispatch('auth/logout', false)
-        }
-    },
-
 ];

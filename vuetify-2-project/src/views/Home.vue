@@ -20,28 +20,27 @@
                   <div v-if="dialogDelete === true">
                     <v-row>
                       <v-col cols="12" sm="6" md="12">
-                        Deseja deletar {{editedItem.nome}} ?
+                        Deseja deletar {{user.nome}} ?
                       </v-col>
                     </v-row>
                   </div>
                   <div v-else-if="dialogDelete === false">
                     <v-row>
                       <v-col cols="12" sm="6" md="12">
-                        <v-text-field v-model="editedItem.nome" label="Nome"></v-text-field>
+                        <v-text-field type="text" v-model="user.nome" label="Nome"></v-text-field>
                       </v-col>
                       <v-col cols="12" sm="6" md="12">
-                        <v-text-field v-model="editedItem.email" label="Email"></v-text-field>
+                        <v-text-field type="text" v-model="user.email" label="Email"></v-text-field>
                       </v-col>
                       <v-col cols="12" sm="6" md="12">
-                        <v-text-field v-model="editedItem.password" label="Senha"></v-text-field>
+                        <v-text-field type="password" v-model="user.password" label="Senha"></v-text-field>
                       </v-col>
                       <v-col cols="12" sm="6" md="12">
-                        <v-switch v-model="editedItem.habilitado" :label="`Habilitado: ${editedItem.habilitado}`">
+                        <v-switch v-model="user.habilitado" :label="`Habilitado: ${user.habilitado}`">
                         </v-switch>
                       </v-col>
                     </v-row>
                   </div>
-                </v-row>
               </v-container>
             </v-card-text>
 
@@ -67,10 +66,13 @@
                     class="elevation-1">
                 <template v-slot:item.action="{ item }">
                   <v-icon medium="" color="success" class="mr-2" @click="editItem(item)">edit</v-icon>
-                  <v-icon medium="" color="success" @click="deleteItem(item)">delete</v-icon>
+                  <div v-if="item.habilitado === false">
+                    <v-icon medium="" color="success" @click="deleteItem(item)">delete</v-icon>
+                  </div>
                 </template>
-                <template v-slot:no-data="">
-                  <v-btn color="primary" @click="initialize">Resetar</v-btn>
+                <template v-slot:item.habilits="{ item }">
+                  <v-switch disabled v-model="item.habilitado">
+                  </v-switch>
                 </template>
             </v-data-table>
           </v-col>
@@ -83,9 +85,8 @@
 <script>
 // @ is an alias to /src
 import VCardWidget from "@/components/VWidget";
-import {RepositoryFactory} from "@/repositories/RepositoryFactory";
-const usuarioRepo = RepositoryFactory.get("usuario");
-
+import {createNamespacedHelpers} from 'vuex'
+const {mapState, mapActions} = createNamespacedHelpers('user')
 export default {
   name: 'home',
   components: {
@@ -96,33 +97,22 @@ export default {
     dialogDelete: false,
     dialog: false,
     headers: [
-      {
-        text: 'Nome',
-        align: 'left',
-        value: 'nome',
-      },
+      { text: 'Nome', align: 'left', value: 'nome' },
       { text: 'Email', value: 'email' },
-      { text: 'Habilitado', value: 'habilitado' },
+      { text: 'Habilitado', value: 'habilits', sortable: false },
       { text: "Acões", value: "action", sortable: false, width: "8%" }
-],
-    usuarios :[],
-    editedIndex: -1,
-    editedItem: {
+    ],
+    userIndex: -1,
+    defaultUser: {
       nome: '',
       email: '',
-      habilitado: false
-    },
-    defaultItem: {
-      nome: '',
-      email: '',
+      password: '',
       habilitado: false
     },
   }),
 
   created() {
-    usuarioRepo.getAll().then(res => {
-      this.usuarios = res.data;
-    }).catch(console.error);
+    this.listUser()
   },
 
   computed: {
@@ -130,43 +120,40 @@ export default {
       if (this.dialogDelete) {
         return "Deletar Usuário";
       }else
-        return this.editedIndex === -1 ? 'Novo Usuário' : 'Editar Usuário'
+        return this.userIndex === -1 ? 'Novo Usuário' : 'Editar Usuário'
     },
+    ...mapState(['usuarios', 'user'])
   },
 
   methods: {
+    ...mapActions(['listUser', 'addUser']),
     editItem (item) {
       this.dialogDelete = false;
-      this.editedIndex = this.usuarios.indexOf(item);
-      this.editedItem = Object.assign({}, item);
+      this.userIndex = this.usuarios.indexOf(item);
       this.dialog = true;
     },
     deleteItem (item) {
       this.dialogDelete = true;
-      this.editedIndex = this.usuarios.indexOf(item);
-      this.editedItem = Object.assign({}, item);
+      this.userIndex = this.usuarios.indexOf(item);
       this.dialog = true;
     },
     close () {
       this.dialog = false;
       setTimeout(() => {
-        this.editedItem = Object.assign({}, this.defaultItem);
-        this.editedIndex = -1;
+        this.userIndex = -1;
         this.dialogDelete = false;
       }, 300);
     },
     save () {
-      if (this.editedIndex > -1) {
-        Object.assign(this.usuarios[this.editedIndex], this.editedItem)
-      } else {
-        this.usuarios.push(this.editedItem)
-      }
+      this.addUser()
+      
       this.close()
     },
     remove() {
-      this.usuarios.splice(this.editedIndex, 1);
+      this.usuarios.splice(this.userIndex, 1);
       this.close();
     }
   }
 }
+
 </script>

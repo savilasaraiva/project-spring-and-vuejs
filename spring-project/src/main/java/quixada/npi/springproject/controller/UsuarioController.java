@@ -1,9 +1,7 @@
 package quixada.npi.springproject.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 import quixada.npi.springproject.model.Usuario;
 import quixada.npi.springproject.service.UsuarioService;
@@ -28,13 +26,10 @@ public class UsuarioController {
         return ResponseEntity.ok().build();
     }
 
-    @PostMapping("/usuario/add")
+    @PostMapping("/add")
     public ResponseEntity<Usuario> create(@RequestBody Usuario usuario) {
         // Cadastrar usuário e retornar usuário cadastrado...
-        if(usuarioService.findByEmail(usuario.getEmail()) != null){
-            return new ResponseEntity<>(HttpStatus.CONFLICT);
-        }
-        return new ResponseEntity<>(usuarioService.addUser(usuario), HttpStatus.CREATED);
+        return ResponseEntity.ok(usuarioService.addUser(usuario));
     }
 
     //@DeleteMapping("{id}")

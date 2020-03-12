@@ -23,11 +23,18 @@ const actions = {
                 localStorage.setItem('token', res.data.token);
                 localStorage.setItem('token_update_date', date);
                 localStorage.setItem('nome', res.data.username);
-                
                 commit('AUTHENTICATE', {token: res.data.token, date });
             })
             .catch(error => console.log(error))
             .finally(() => resolve())
+        })
+    },
+
+    logout ({commit}) {
+        return new Promise((resolve, reject) => {
+            localStorage.removeItem('token')
+            commit('CLEAR_AUTH_DATA')
+            resolve()
         })
     },
 
@@ -42,15 +49,7 @@ const actions = {
         localStorage.removeItem('token');
         localStorage.removeItem('token_update_date');
         commit('CLEAR_AUTH_DATA')
-    },
-
-    getUnidadeLotacao({commit}) {
-        // Busca o unidade de lotação do usuário
-        axios.get('/auth/unidade').then(res => {
-            commit('SET_UNIDADE_LOTACAO', res.data)
-        })
-    },
-
+    }
 };
 
 // getters
@@ -67,10 +66,6 @@ const getters = {
         const MINUTOS_VALIDADE_TOKEN = 60;
         const minutos = parseInt(((new Date() - state.token_update_date) / 1000) / 60);
         return minutos < MINUTOS_VALIDADE_TOKEN;
-    },
-
-    getUnidadeLotacao(state) {
-        return state.unidadeLotacao
     }
 };
 
@@ -87,9 +82,6 @@ const mutations = {
     UPDATE_AUTH_DATA: (state, tokenData) => {
         state.token = tokenData.token;
         state.token_update_date = tokenData.date;
-    },
-    SET_UNIDADE_LOTACAO: (state, unidade) => {
-        state.unidadeLotacao = unidade
     }
 };
 

@@ -28,7 +28,6 @@ public class Usuario implements UserDetails {
 	private String email;
 	
 	@NotEmpty
-	@JsonIgnore
 	private String password;
 
 	private boolean habilitado;
@@ -39,6 +38,13 @@ public class Usuario implements UserDetails {
 		this.id = id;
 		this.nome = nome;
 		this.email = email;
+	}
+
+	public Usuario (String nome, String email, String password, boolean habilitado) {
+		this.nome = nome;
+		this.email = email;
+		this.password = password;
+		this.habilitado = habilitado;
 	}
 
 	public Integer getId() {
@@ -133,5 +139,15 @@ public class Usuario implements UserDetails {
 			return false;
 		return true;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "Usuario{" +
+				"id=" + id +
+				", nome='" + nome + '\'' +
+				", email='" + email + '\'' +
+				", password='" + password + '\'' +
+				", habilitado=" + habilitado +
+				'}';
+	}
 }
