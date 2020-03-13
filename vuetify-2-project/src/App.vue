@@ -1,13 +1,21 @@
 <template>
     <v-app>
         <template v-if="!$route.meta.public">
-            <v-app-bar color="primary" dark dense app>
+            <v-app-bar color="primary" dark dense app shift>
               <div class="d-flex align-center">
                 <v-img alt="Vuetify Logo" class="shrink mr-2" contain src="/static/images/logo01.png"
                   transition="scale-transition" width="40"/>
               </div>
                 <v-toolbar-items class="ml-3">
                     <v-btn to="/" text>Início</v-btn>
+                    <v-btn to="/user" text>
+                        <span>Usuários</span>
+                        <v-icon>fa-users</v-icon>
+                    </v-btn>
+                    <v-btn to="/course" text>
+                        <span>Cursos</span>
+                        <v-icon>fa-</v-icon>
+                    </v-btn>
                 </v-toolbar-items>
 
               <v-spacer></v-spacer>

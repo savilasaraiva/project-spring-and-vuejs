@@ -1,6 +1,8 @@
 import store from '../store'
 import LoginPage from '../views/Login'
 import Home from '../views/Home'
+import Course from '../views/Course'
+import User from "../views/User";
 
 export default [
 
@@ -20,5 +22,14 @@ export default [
         name: 'Login',
         component: LoginPage
     },
-
+    {
+        path: '/user',
+        name: 'User',
+        component: User
+    },
+    {
+        path: '/course',
+        name: 'Course',
+        component: Course
+    },
 ];
