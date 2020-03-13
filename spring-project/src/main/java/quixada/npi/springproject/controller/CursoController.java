@@ -1,5 +1,6 @@
 package quixada.npi.springproject.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import quixada.npi.springproject.model.Curso;
@@ -11,6 +12,7 @@ import java.util.List;
 @RequestMapping("/cursos")
 public class CursoController {
 
+    @Autowired
     private CursoService cursoService;
 
     @GetMapping("")

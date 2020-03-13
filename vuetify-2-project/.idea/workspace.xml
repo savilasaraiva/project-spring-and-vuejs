@@ -2,24 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7c93dc61-2b15-4139-96fd-8ba874fe3e66" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/repositories/cursoRepository.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/modules/course.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/Course.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/User.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/31aa6f6476a73d3a44ece51996664e2f.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/31aa6f6476a73d3a44ece51996664e2f.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/3fd9bef6e886be5905a74fbdcd4cba54.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/3fd9bef6e886be5905a74fbdcd4cba54.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/463a7200546261c08b2f281e4fc9fc5b.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/463a7200546261c08b2f281e4fc9fc5b.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/548292c6ae34a916d47a14ec2d8c5a1e.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/548292c6ae34a916d47a14ec2d8c5a1e.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/6188869d102ac7954d1fbd8550099985.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/6188869d102ac7954d1fbd8550099985.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/ab74e6355e316c742ba898d2b72f485e.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/ab74e6355e316c742ba898d2b72f485e.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/c3491c473a3478694ebc979610eaa460.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/c3491c473a3478694ebc979610eaa460.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/c44775476a3776f7a7a3b4f4186e7b47.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/c44775476a3776f7a7a3b4f4186e7b47.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/d3c3944db2bceb1e68214cbe4c1eb88e.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/d3c3944db2bceb1e68214cbe4c1eb88e.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/router/paths.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/paths.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Home.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-project/src/main/java/quixada/npi/springproject/controller/CursoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-project/src/main/java/quixada/npi/springproject/controller/CursoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-project/src/main/java/quixada/npi/springproject/service/CursoService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-project/src/main/java/quixada/npi/springproject/service/impl/CursoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-project/src/main/java/quixada/npi/springproject/service/impl/CursoServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,7 +129,7 @@
       <workItem from="1583971476971" duration="13784000" />
       <workItem from="1584027383405" duration="5651000" />
       <workItem from="1584049458308" duration="711000" />
-      <workItem from="1584051860955" duration="4154000" />
+      <workItem from="1584051860955" duration="4804000" />
     </task>
     <servers />
   </component>
