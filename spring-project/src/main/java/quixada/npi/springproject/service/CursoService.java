@@ -10,5 +10,11 @@ public interface CursoService {
 
     List<Curso> findAll();
 
-    Curso addCourse(Curso course);
+    Curso findById(Integer id);
+
+    Curso add(Curso course);
+
+    Curso update(Curso course);
+
+    void delete(Curso course);
 }

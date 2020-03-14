@@ -15,7 +15,6 @@ public class Curso {
     private String nome;
 
     @NotEmpty
-    @Column(unique = true)
     private String sigla;
 
     @NotEmpty

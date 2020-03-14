@@ -21,22 +21,26 @@ public class CursoController {
     }
 
     @GetMapping("{id}")
-    public ResponseEntity<List<Curso>> find(@PathVariable Integer id) {
-        // Busca curso pelo id e retornar usuário...
-        return ResponseEntity.ok().build();
+    public Curso findById(@PathVariable Integer id) {
+        // Busca curso pelo id e retornar curso...
+        return cursoService.findById(id);
     }
 
     @PostMapping("/add")
     public ResponseEntity<Curso> create(@RequestBody Curso curso) {
         // Cadastrar curso e retornar curso cadastrado...
-        return ResponseEntity.ok(cursoService.addCourse(curso));
+        return ResponseEntity.ok(cursoService.add(curso));
     }
 
-    //@DeleteMapping("{id}")
-    //TODO: excluir curso
+    @PutMapping("{id}")
+    public ResponseEntity<Curso> update(@RequestBody Curso curso) {
+        return ResponseEntity.ok(cursoService.update(curso));
+    }
 
-    // @PutMapping("{id}")
-    /*public ResponseEntity<Curso> update(@RequestBody Curso curso) {
-
-    }*/
+    @DeleteMapping("{id}")
+    public void delete(@PathVariable Integer id) {
+        Curso curso = findById(id);
+        cursoService.delete(curso);
+        ResponseEntity.ok().build();
+    }
 }

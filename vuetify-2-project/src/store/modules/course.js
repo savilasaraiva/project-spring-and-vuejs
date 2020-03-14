@@ -7,6 +7,7 @@ const cursoRepo = RepositoryFactory.get("curso");
 const state = {
     cursos:[],
     course: {
+        id: 0,
         nome: '',
         sigla: '',
         turno: ''
@@ -15,21 +16,44 @@ const state = {
 
 // actions
 const actions = {
+    async listCourses({state, commit}){
+        const res = await cursoRepo.getAll()
+        commit('setCourses', res.data)
+    },
     async addCourse({state, commit}){
         try {
             const res = await axios.post(
                 '/cursos/add', state.course,
                 {headers: {Authorization: auth.state.token}})
-            commit('clearCourse')
+            commit('clearCourse', res.data)
+            state.cursos.push(res.data)
         }catch (errs){
             console.log(errs)
         }
     },
-
-    async listCourses({state, commit}){
-        const res = await usuarioRepo.getAll()
-        commit('setCourses', res.data)
-    }
+    async updateCourse({state, commit}){
+        try {
+            const res = await axios.put(
+                `/cursos/${state.course.id}`, state.course,
+                {headers: {Authorization: auth.state.token}})
+            commit('clearCourse', res.data)
+        }catch (errs){
+            console.log(errs)
+        }
+    },
+    async deleteCourse({state, commit}){
+        try {
+            const res = await axios.delete(
+                `/cursos/${state.course.id}`,
+                {headers: {Authorization: auth.state.token}})
+            commit('clearCourse', res.data)
+        }catch (errs){
+            console.log(errs)
+        }
+    },
+    async setCourse({state, commit}, course){
+        commit('setCourse', course);
+    },
 };
 
 // getters
@@ -39,18 +63,20 @@ const getters = {
 
 // mutations
 const mutations = {
-    setUsers (state, cursos){
+    setCourses (state, cursos){
         state.cursos = cursos
     },
-    setUser(state, course){
+    setCourse(state, course){
+        state.course.id = course.id,
         state.course.nome = course.nome,
         state.course.sigla = course.sigla,
         state.course.turno = course.turno
     },
     clearCourse(state){
+        state.course.id = 0,
         state.course.nome = '',
-        state.course.email = '',
-        state.course.password = ''
+        state.course.sigla = '',
+        state.course.turno = ''
     }
 };
 

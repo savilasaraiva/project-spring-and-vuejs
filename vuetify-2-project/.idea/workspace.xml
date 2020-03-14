@@ -2,9 +2,44 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7c93dc61-2b15-4139-96fd-8ba874fe3e66" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/dist/css/app.6d7b45ae.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/js/app.cc144ee3.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/js/app.cc144ee3.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/js/chunk-vendors.19d0b7bb.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/js/chunk-vendors.19d0b7bb.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../spring-project/src/main/java/quixada/npi/springproject/controller/CursoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-project/src/main/java/quixada/npi/springproject/controller/CursoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring-project/src/main/java/quixada/npi/springproject/service/CursoService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-project/src/main/java/quixada/npi/springproject/model/Curso.java" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-project/src/main/java/quixada/npi/springproject/model/Curso.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-project/src/main/java/quixada/npi/springproject/repository/CursoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-project/src/main/java/quixada/npi/springproject/repository/CursoRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-project/src/main/java/quixada/npi/springproject/service/CursoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-project/src/main/java/quixada/npi/springproject/service/CursoService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../spring-project/src/main/java/quixada/npi/springproject/service/impl/CursoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-project/src/main/java/quixada/npi/springproject/service/impl/CursoServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/app.0612b2fe.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/app.48055a97.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/app.48055a97.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-vendors.b99fea7d.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-vendors.b99fea7d.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/056138396a62255a2723ae85571f7f50.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/056138396a62255a2723ae85571f7f50.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/06a9ba92e3097e24b531703b9e02ffe4.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/06a9ba92e3097e24b531703b9e02ffe4.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/0b6150801bd24c12dd5c49ac025770da.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/0b6150801bd24c12dd5c49ac025770da.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/10a9763370fb7b6d2db83b04593b67a1.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/10a9763370fb7b6d2db83b04593b67a1.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/1e1720f61364ea5de0c1349ad4f059fd.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/1e1720f61364ea5de0c1349ad4f059fd.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/42b5571c6d2ed9dc0ca3e432dc681b7e.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/42b5571c6d2ed9dc0ca3e432dc681b7e.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/463a7200546261c08b2f281e4fc9fc5b.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/463a7200546261c08b2f281e4fc9fc5b.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/548292c6ae34a916d47a14ec2d8c5a1e.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/548292c6ae34a916d47a14ec2d8c5a1e.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/5be3d78451474ba36c838c3c34480984.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/5be3d78451474ba36c838c3c34480984.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/979c2d0486e41a0b7eb78ea387bd9b73.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/979c2d0486e41a0b7eb78ea387bd9b73.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/9b5500bca2c987999ad899423b56ef48.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/9b5500bca2c987999ad899423b56ef48.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/9cff59a2b6de6cadc04623f8a7c32c3e.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/9cff59a2b6de6cadc04623f8a7c32c3e.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/ab74e6355e316c742ba898d2b72f485e.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/ab74e6355e316c742ba898d2b72f485e.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/c3491c473a3478694ebc979610eaa460.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/c3491c473a3478694ebc979610eaa460.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/d3c3944db2bceb1e68214cbe4c1eb88e.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/d3c3944db2bceb1e68214cbe4c1eb88e.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/de1c17652588df862e1c2663d00d5b42.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/de1c17652588df862e1c2663d00d5b42.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/ecbb428f8388cde47b0e6a0d83317a61.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/ecbb428f8388cde47b0e6a0d83317a61.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repositories/RepositoryFactory.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/repositories/RepositoryFactory.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repositories/cursoRepository.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/repositories/cursoRepository.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/modules/course.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/modules/course.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Course.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Course.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,18 +82,21 @@
     <option name="version" value="1" />
   </component>
   <component name="ProjectId" id="1Yiir8AdzMk73ISHrSbPIVTtBLD" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../spring-project" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -129,14 +167,25 @@
       <workItem from="1583971476971" duration="13784000" />
       <workItem from="1584027383405" duration="5651000" />
       <workItem from="1584049458308" duration="711000" />
-      <workItem from="1584051860955" duration="4804000" />
+      <workItem from="1584051860955" duration="11013000" />
+      <workItem from="1584072193792" duration="9794000" />
+      <workItem from="1584105425577" duration="9729000" />
+      <workItem from="1584143283171" duration="15191000" />
+      <workItem from="1584204420956" duration="1599000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="275" y="22" key="#Inspections" timestamp="1584151658384">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="22" key="#Inspections/0.0.1366.728@0.0.1366.728" timestamp="1584151658384" />
     <state x="275" y="22" key="#Notifications" timestamp="1583456345186">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -149,37 +198,45 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="425" y="167" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1584054894075" />
-    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1584052254485">
+    <state x="212" y="0" key="CommitChangelistDialog2" timestamp="1584204516746">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1584052254485" />
-    <state width="1323" height="143" key="GridCell.Tab.0.bottom" timestamp="1584052558929">
+    <state x="212" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1584204516746" />
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1584120631387">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="143" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1584052558929" />
-    <state width="1323" height="143" key="GridCell.Tab.0.center" timestamp="1584052558929">
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1584120631387" />
+    <state width="1323" height="129" key="GridCell.Tab.0.bottom" timestamp="1584199073764">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="143" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1584052558929" />
-    <state width="1323" height="143" key="GridCell.Tab.0.left" timestamp="1584052558929">
+    <state width="1323" height="129" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1584199073764" />
+    <state width="1323" height="129" key="GridCell.Tab.0.center" timestamp="1584199073764">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="143" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1584052558929" />
-    <state width="1323" height="143" key="GridCell.Tab.0.right" timestamp="1584052558929">
+    <state width="1323" height="129" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1584199073764" />
+    <state width="1323" height="129" key="GridCell.Tab.0.left" timestamp="1584199073764">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="143" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1584052558929" />
+    <state width="1323" height="129" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1584199073764" />
+    <state width="1323" height="129" key="GridCell.Tab.0.right" timestamp="1584199073764">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="129" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1584199073764" />
     <state x="163" y="0" key="SettingsEditor" timestamp="1583432675270">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="163" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1583432675270" />
-    <state x="0" y="0" key="com.intellij.ide.util.TipDialog" timestamp="1584052014612">
+    <state x="0" y="0" key="com.intellij.ide.util.TipDialog" timestamp="1584204452376">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="0" y="0" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1584052014612" />
+    <state x="0" y="0" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1584204452376" />
     <state x="549" y="230" width="250" height="278" key="jetbrains.javascript.buildTools.run-task-popup" timestamp="1583432924014">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="549" y="230" width="250" height="278" key="jetbrains.javascript.buildTools.run-task-popup/0.0.1366.728@0.0.1366.728" timestamp="1583432924014" />
+    <state x="339" y="162" key="run.anything.popup" timestamp="1584112234172">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1584112234172" />
   </component>
 </project>

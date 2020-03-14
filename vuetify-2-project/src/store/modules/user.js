@@ -19,14 +19,34 @@ const actions = {
     async addUser({state, commit}){
         try {
             const res = await axios.post(
-                '/usuarios/add', state.user,
+                '/usuarios/add', state.course,
                 {headers: {Authorization: auth.state.token}})
-            commit('clearUser')
+            commit('clearUser', res.data)
+            state.usuarios.push(res.data)
         }catch (errs){
             console.log(errs)
         }
     },
-
+    async updateUser({state, commit}){
+        try {
+            const res = await axios.put(
+                `/usuarios/${state.usuarios.id}`, state.user,
+                {headers: {Authorization: auth.state.token}})
+            commit('clearUser', res.data)
+        }catch (errs){
+            console.log(errs)
+        }
+    },
+    async deleteUser({state, commit}){
+        try {
+            const res = await axios.delete(
+                `/cursos/${state.course.id}`,
+                {headers: {Authorization: auth.state.token}})
+            commit('clearCourse', res.data)
+        }catch (errs){
+            console.log(errs)
+        }
+    },
     async listUser({state, commit}){
         const res = await usuarioRepo.getAll()
         commit('setUsers', res.data)
