@@ -2,6 +2,7 @@ package quixada.npi.springproject.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
+import java.util.List;
 
 @Entity
 public class Curso {
@@ -20,20 +21,25 @@ public class Curso {
     @NotEmpty
     private String turno;
 
+    @OneToMany
+    private List<Usuario> usuarios;
+
     public Curso() {
     }
 
-    public Curso(String nome, String sigla, String turno) {
+    public Curso(String nome, String sigla, String turno, List<Usuario> usuarios) {
         this.nome = nome;
         this.sigla = sigla;
         this.turno = turno;
+        this.usuarios = usuarios;
     }
 
-    public Curso(Integer id, String nome, String sigla, String turno) {
+    public Curso(Integer id, String nome, String sigla, String turno, List<Usuario> usuarios) {
         this.id = id;
         this.nome = nome;
         this.sigla = sigla;
         this.turno = turno;
+        this.usuarios = usuarios;
     }
 
     public Integer getId() {
@@ -68,6 +74,10 @@ public class Curso {
         this.turno = turno;
     }
 
+    public List<Usuario> getUsuarios() { return usuarios; }
+
+    public void setUsuarios(List<Usuario> usuarios) { this.usuarios = usuarios; }
+
     @Override
     public String toString() {
         return "Curso{" +
@@ -75,6 +85,7 @@ public class Curso {
                 ", nome='" + nome + '\'' +
                 ", sigla='" + sigla + '\'' +
                 ", turno='" + turno + '\'' +
+                ", usuarios ='" + usuarios.toString() + '\'' +
                 '}';
     }
 }

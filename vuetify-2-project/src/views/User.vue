@@ -20,7 +20,7 @@
                                 <div v-if="dialogDelete === true">
                                     <v-row>
                                         <v-col cols="12" sm="6" md="12">
-                                            Deseja deletar {{user.nome}} ?
+                                            Deseja deletar {{user.nome}}?
                                         </v-col>
                                     </v-row>
                                 </div>
@@ -35,8 +35,13 @@
                                         <v-col cols="12" sm="6" md="12">
                                             <v-text-field type="password" v-model="user.password" label="Senha"></v-text-field>
                                         </v-col>
-                                        <v-col cols="12" sm="6" md="12">
-                                            <v-switch v-model="user.habilitado" :label="`Habilitado: ${user.habilitado}`">
+                                        <v-col cols="12" sm="6" md="8">
+                                            <v-select v-model="user.curso" :items="cursos" label="Curso" item-text="nome"
+                                                      item-value="id" return-object>
+                                            </v-select>
+                                        </v-col>
+                                        <v-col cols="12" sm="6" md="4">
+                                            <v-switch v-model="user.habilitado" :label="'Habilitado'">
                                             </v-switch>
                                         </v-col>
                                     </v-row>
@@ -85,17 +90,19 @@
 <script>
     // @ is an alias to /src
     import VCardWidget from "@/components/VWidget";
-    import {createNamespacedHelpers} from 'vuex'
-    const {mapState, mapActions} = createNamespacedHelpers('user')
+    import { mapState, mapActions } from 'vuex'
+    //import {createNamespacedHelpers} from 'vuex'
+    //const {mapState, mapActions} = createNamespacedHelpers('user')
+
     export default {
         name: 'user',
         components: {
             VCardWidget
         },
-
         data: () => ({
             dialogDelete: false,
             dialog: false,
+            valid: true,
             headers: [
                 { text: 'Nome', align: 'left', value: 'nome' },
                 { text: 'Email', value: 'email' },
@@ -109,10 +116,12 @@
                 password: '',
                 habilitado: false
             },
+            lazy: false,
         }),
 
         created() {
-            this.listUser()
+            this.listUsers(),
+            this.listCourses()
         },
 
         computed: {
@@ -122,19 +131,23 @@
                 }else
                     return this.userIndex === -1 ? 'Novo Usuário' : 'Editar Usuário'
             },
-            ...mapState(['usuarios', 'user'])
+            ...mapState('user', ['usuarios', 'user']),
+            ...mapState('course', ['cursos', 'course'])
         },
 
         methods: {
-            ...mapActions(['listUser', 'addUser']),
+            ...mapActions('user', ['listUsers', 'setUser', 'addUser', 'updateUser', 'deleteUser']),
+            ...mapActions('course', ['listCourses', 'setCourse']),
             editItem (item) {
                 this.dialogDelete = false;
                 this.userIndex = this.usuarios.indexOf(item);
+                this.setUser(item);
                 this.dialog = true;
             },
             deleteItem (item) {
                 this.dialogDelete = true;
                 this.userIndex = this.usuarios.indexOf(item);
+                this.setUser(item);
                 this.dialog = true;
             },
             close () {
@@ -145,7 +158,7 @@
                 }, 300);
             },
             save () {
-                this.addUser()
+                this.user.addUser()
                 Object.assign(this.usuarios[this.userIndex], this.user)
                 this.close()
             },

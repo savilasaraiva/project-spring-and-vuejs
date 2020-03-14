@@ -77,7 +77,6 @@
     import VCardWidget from "@/components/VWidget";
     import {createNamespacedHelpers} from 'vuex'
     const {mapState, mapActions} = createNamespacedHelpers('course')
-
     export default {
         name: 'course',
         components: {

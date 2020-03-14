@@ -29,20 +29,25 @@ public class Usuario implements UserDetails {
 	@NotEmpty
 	private String password;
 
+	@ManyToOne
+	private Curso curso;
+
 	private boolean habilitado;
 
 	public Usuario() {}
 
-	public Usuario (Integer id, String nome, String email) {
+	public Usuario (Integer id, String nome, String email, Curso curso) {
 		this.id = id;
 		this.nome = nome;
 		this.email = email;
+		this.curso = curso;
 	}
 
-	public Usuario (String nome, String email, String password, boolean habilitado) {
+	public Usuario (String nome, String email, String password, Curso curso, boolean habilitado) {
 		this.nome = nome;
 		this.email = email;
 		this.password = password;
+		this.curso = curso;
 		this.habilitado = habilitado;
 	}
 
@@ -73,6 +78,10 @@ public class Usuario implements UserDetails {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
+	public Curso getCurso() { return curso; }
+
+	public void setCurso(Curso curso) { this.curso = curso; }
 
 	public boolean isHabilitado() {
 		return habilitado;
@@ -129,6 +138,7 @@ public class Usuario implements UserDetails {
 				", nome='" + nome + '\'' +
 				", email='" + email + '\'' +
 				", password='" + password + '\'' +
+				", curso='" + curso.getNome() + '\'' +
 				", habilitado=" + habilitado +
 				'}';
 	}

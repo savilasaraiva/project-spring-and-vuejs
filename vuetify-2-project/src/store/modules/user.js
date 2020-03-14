@@ -7,15 +7,21 @@ const usuarioRepo = RepositoryFactory.get("usuario");
 const state = {
     usuarios:[],
     user: {
+        id: 0,
         nome: '',
         email: '',
         password: '',
-        habilitado: false
+        habilitado: false,
+        curso: 0
     }
 };
 
 // actions
 const actions = {
+    async listUsers({state, commit}){
+        const res = await usuarioRepo.getAll()
+        commit('setUsers', res.data)
+    },
     async addUser({state, commit}){
         try {
             const res = await axios.post(
@@ -30,7 +36,7 @@ const actions = {
     async updateUser({state, commit}){
         try {
             const res = await axios.put(
-                `/usuarios/${state.usuarios.id}`, state.user,
+                `/usuarios/${state.user.id}`, state.user,
                 {headers: {Authorization: auth.state.token}})
             commit('clearUser', res.data)
         }catch (errs){
@@ -40,16 +46,12 @@ const actions = {
     async deleteUser({state, commit}){
         try {
             const res = await axios.delete(
-                `/cursos/${state.course.id}`,
+                `/usuarios/${state.user.id}`,
                 {headers: {Authorization: auth.state.token}})
-            commit('clearCourse', res.data)
+            commit('clearUser', res.data)
         }catch (errs){
             console.log(errs)
         }
-    },
-    async listUser({state, commit}){
-        const res = await usuarioRepo.getAll()
-        commit('setUsers', res.data)
     }
 };
 
@@ -64,16 +66,20 @@ const mutations = {
         state.usuarios = usuarios
     },
     setUser(state, user){
+        state.user.id = user.id,
         state.user.nome = user.nome,
         state.user.email = user.email,
         state.user.password = user.password,
-        state.user.habilitado = user.habilitado
+        state.user.habilitado = user.habilitado,
+        state.user.curso = user.curso
     },
     clearUser(state){
+        state.user.id = 0,
         state.user.nome = '',
         state.user.email = '',
         state.user.password = '',
-        state.user.habilitado = ''
+        state.user.habilitado = '',
+        state.user.curso = 0
     }
 };
 
