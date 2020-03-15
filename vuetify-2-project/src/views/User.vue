@@ -14,52 +14,52 @@
                             <span class="headline">{{ formTitle }}</span>
                         </v-card-title>
 
-                        <v-card-text>
-                            <v-container>
-
+                        <v-form ref="form" v-model="valid" :lazy-validation="lazy">
+                            <v-card-text>
+                                <v-container>
+                                    <div v-if="dialogDelete === true">
+                                        <v-row>
+                                            <v-col cols="12" sm="6" md="12">
+                                                Deseja deletar {{user.nome}}?
+                                            </v-col>
+                                        </v-row>
+                                    </div>
+                                    <div v-else-if="dialogDelete === false">
+                                        <v-row>
+                                            <v-col cols="12" sm="6" md="12">
+                                                <v-text-field type="text" v-model="user.nome" label="Nome"></v-text-field>
+                                            </v-col>
+                                            <v-col cols="12" sm="6" md="12">
+                                                <v-text-field type="text" v-model="user.email" label="Email"></v-text-field>
+                                            </v-col>
+                                            <v-col cols="12" sm="6" md="12">
+                                                <v-text-field type="password" v-model="user.password" label="Senha"></v-text-field>
+                                            </v-col>
+                                            <v-col cols="12" sm="6" md="8">
+                                                <v-select v-model="user.curso" :items="cursos" label="Curso" item-text="nome"
+                                                          item-value="id" return-object>
+                                                </v-select>
+                                            </v-col>
+                                            <v-col cols="12" sm="6" md="4">
+                                                <v-switch v-model="user.habilitado" :label="'Habilitado'">
+                                                </v-switch>
+                                            </v-col>
+                                        </v-row>
+                                    </div>
+                                </v-container>
+                            </v-card-text>
+                            <v-card-actions>
+                                <v-spacer></v-spacer>
                                 <div v-if="dialogDelete === true">
-                                    <v-row>
-                                        <v-col cols="12" sm="6" md="12">
-                                            Deseja deletar {{user.nome}}?
-                                        </v-col>
-                                    </v-row>
+                                    <v-btn color="blue darken-1" text @click="remove">Deletar</v-btn>
+                                    <v-btn color="blue darken-1" text @click="close">Cancelar</v-btn>
                                 </div>
                                 <div v-else-if="dialogDelete === false">
-                                    <v-row>
-                                        <v-col cols="12" sm="6" md="12">
-                                            <v-text-field type="text" v-model="user.nome" label="Nome"></v-text-field>
-                                        </v-col>
-                                        <v-col cols="12" sm="6" md="12">
-                                            <v-text-field type="text" v-model="user.email" label="Email"></v-text-field>
-                                        </v-col>
-                                        <v-col cols="12" sm="6" md="12">
-                                            <v-text-field type="password" v-model="user.password" label="Senha"></v-text-field>
-                                        </v-col>
-                                        <v-col cols="12" sm="6" md="8">
-                                            <v-select v-model="user.curso" :items="cursos" label="Curso" item-text="nome"
-                                                      item-value="id" return-object>
-                                            </v-select>
-                                        </v-col>
-                                        <v-col cols="12" sm="6" md="4">
-                                            <v-switch v-model="user.habilitado" :label="'Habilitado'">
-                                            </v-switch>
-                                        </v-col>
-                                    </v-row>
+                                    <v-btn color="blue darken-1" text @click="save">Salvar</v-btn>
+                                    <v-btn color="blue darken-1" text @click="close">Cancelar</v-btn>
                                 </div>
-                            </v-container>
-                        </v-card-text>
-
-                        <v-card-actions>
-                            <v-spacer></v-spacer>
-                            <div v-if="dialogDelete === true">
-                                <v-btn color="blue darken-1" text @click="remove">Deletar</v-btn>
-                                <v-btn color="blue darken-1" text @click="close">Cancelar</v-btn>
-                            </div>
-                            <div v-else-if="dialogDelete === false">
-                                <v-btn color="blue darken-1" text @click="save">Salvar</v-btn>
-                                <v-btn color="blue darken-1" text @click="close">Cancelar</v-btn>
-                            </div>
-                        </v-card-actions>
+                            </v-card-actions>
+                        </v-form>
                     </v-card>
                 </v-dialog>
                 <v-row>
@@ -111,6 +111,7 @@
             ],
             userIndex: -1,
             defaultUser: {
+                id: '',
                 nome: '',
                 email: '',
                 password: '',
@@ -153,17 +154,27 @@
             close () {
                 this.dialog = false;
                 setTimeout(() => {
+                    this.setUser(this.defaultUser);
                     this.userIndex = -1;
                     this.dialogDelete = false;
+                    this.$refs.form.resetValidation()
                 }, 300);
             },
             save () {
-                this.user.addUser()
-                Object.assign(this.usuarios[this.userIndex], this.user)
+                this.$refs.form.validate()
+                if(this.userIndex > -1) {
+                    Object.assign(this.usuarios[this.userIndex], this.user)
+                    this.updateUser()
+                    this.$refs.form.resetValidation()
+                }else{
+                    this.addUser()
+                    this.$refs.form.resetValidation()
+                }
                 this.close()
             },
             remove() {
-                this.usuarios.splice(this.userIndex, 1);
+                this.cursos.splice(this.user, 1);
+                this.deleteUser()
                 this.close();
             }
         }

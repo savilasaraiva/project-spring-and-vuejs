@@ -2,6 +2,7 @@ package quixada.npi.springproject.model;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
@@ -75,9 +76,7 @@ public class Usuario implements UserDetails {
 		this.email = email;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
-	}
+	public void setPassword(String password) { this.password = password; }
 
 	public Curso getCurso() { return curso; }
 

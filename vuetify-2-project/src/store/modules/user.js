@@ -25,7 +25,7 @@ const actions = {
     async addUser({state, commit}){
         try {
             const res = await axios.post(
-                '/usuarios/add', state.course,
+                '/usuarios/add', state.user,
                 {headers: {Authorization: auth.state.token}})
             commit('clearUser', res.data)
             state.usuarios.push(res.data)
@@ -52,7 +52,10 @@ const actions = {
         }catch (errs){
             console.log(errs)
         }
-    }
+    },
+    async setUser({state, commit}, course){
+        commit('setUser', course);
+    },
 };
 
 // getters

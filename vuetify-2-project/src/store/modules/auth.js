@@ -30,9 +30,11 @@ const actions = {
         })
     },
 
-    logout ({commit}) {
+    logoutuser ({commit}) {
         return new Promise((resolve, reject) => {
-            localStorage.removeItem('token')
+            localStorage.removeItem('token');
+            localStorage.removeItem('token_update_date');
+            localStorage.removeItem('nome');
             commit('CLEAR_AUTH_DATA')
             resolve()
         })

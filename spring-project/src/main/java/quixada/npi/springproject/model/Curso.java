@@ -2,6 +2,7 @@ package quixada.npi.springproject.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -27,19 +28,19 @@ public class Curso {
     public Curso() {
     }
 
-    public Curso(String nome, String sigla, String turno, List<Usuario> usuarios) {
+    public Curso(String nome, String sigla, String turno) {
         this.nome = nome;
         this.sigla = sigla;
         this.turno = turno;
-        this.usuarios = usuarios;
+        this.usuarios = new ArrayList<>();
     }
 
-    public Curso(Integer id, String nome, String sigla, String turno, List<Usuario> usuarios) {
+    public Curso(Integer id, String nome, String sigla, String turno) {
         this.id = id;
         this.nome = nome;
         this.sigla = sigla;
         this.turno = turno;
-        this.usuarios = usuarios;
+        this.usuarios = new ArrayList<>();
     }
 
     public Integer getId() {

@@ -89,6 +89,7 @@
             valid: true,
             headers: [
                 { text: 'Nome', align: 'left', value: 'nome' },
+                { text: 'Sigla', value: 'sigla' },
                 { text: 'Turno', value: 'turno' },
                 { text: "Acões", value: "action", sortable: false, width: "8%" }
             ],
